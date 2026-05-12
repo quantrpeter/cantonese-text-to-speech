@@ -153,6 +153,7 @@ def main() -> int:
     device = pick_device() if args.device == "auto" else args.device
     if device == "cuda":
         device = "cuda:0"
+    print(f"Using device: {device}")
     dtype = pick_dtype(device)
 
     model = load_model(args.model, device, dtype)
